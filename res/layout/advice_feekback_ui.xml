@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/g_ui_bg1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/navbar_headtitle" />
+    <EditText android:textSize="16.0sp" android:gravity="top" android:id="@id/adviceEdit" android:background="@drawable/shape_et_bg" android:padding="@dimen/g_titlebar_gap" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/feedback_problem_describe" />
+    <EditText android:textSize="16.0sp" android:gravity="top" android:id="@id/et_contact_way" android:background="@drawable/shape_et_bg" android:padding="@dimen/g_titlebar_gap" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:hint="@string/feedback_your_contact_way" android:singleLine="true" />
+    <Button android:textColor="@color/color_selector_btn_feedback" android:id="@id/btn_commit" android:background="@drawable/selector_btn_feeback" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="15.0dip" android:text="@string/feedback_commit" />
+</LinearLayout>

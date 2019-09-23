@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/rl_suggest" android:background="@drawable/dialog_background" android:layout_width="300.0dip" android:layout_height="wrap_content" android:layout_marginTop="100.0dip" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/img_programmer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:src="@drawable/yuan" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ff333333" android:id="@id/tv_suggest_dialog_tip1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/succest_dialog_tip1" android:layout_below="@id/img_programmer" android:layout_centerHorizontal="true" android:letterSpacing="0.1" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff333333" android:id="@id/tv_suggest_dialog_tip2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/succest_dialog_tip2" android:layout_below="@id/tv_suggest_dialog_tip1" android:layout_centerHorizontal="true" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:layout_below="@id/tv_suggest_dialog_tip2">
+            <Button android:textSize="12.0sp" android:textColor="@color/unlogin_btn_color" android:id="@id/btn_suggest" android:background="@drawable/button_cancel_style" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/want_suggest" android:layout_weight="1.0" />
+            <View android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" />
+            <Button android:textSize="12.0sp" android:textColor="@color/white" android:id="@id/btn_encourage" android:background="@drawable/button_ok_style" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/encourage" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <Button android:id="@id/btn_suggest_close" android:background="@drawable/giftpop_selector" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="40.0dip" android:layout_below="@id/rl_suggest" android:layout_centerHorizontal="true" />
+</RelativeLayout>

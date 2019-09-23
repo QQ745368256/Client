@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/title_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/navbar_headtitle" />
+        <RelativeLayout android:id="@id/account_login" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="15.0dip">
+            <LinearLayout android:orientation="horizontal" android:id="@id/layout_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <com.oray.sunlogin.weiget.EditTextView android:textSize="18.0sp" android:textColor="#ff333333" android:textColorHint="#ffcccccc" android:layout_gravity="center" android:id="@id/editUsername" android:background="@null" android:focusable="true" android:focusableInTouchMode="true" android:nextFocusUp="@id/buttonConnect" android:nextFocusDown="@id/editPassword" android:layout_width="0.0dip" android:layout_height="44.0dip" android:hint="@string/account" android:singleLine="true" android:layout_weight="1.0" />
+                <RelativeLayout android:layout_gravity="center_vertical" android:id="@id/arrow" android:visibility="visible" android:layout_width="35.0dip" android:layout_height="35.0dip">
+                    <Button android:id="@id/btn_history_list" android:background="@drawable/arrow_down_selector" android:layout_width="wrap_content" android:layout_height="14.0dip" android:layout_centerInParent="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:id="@id/cross_view1" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/layout_account" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/layout_password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_below="@id/cross_view1">
+                <com.oray.sunlogin.weiget.EditTextView android:textSize="18.0sp" android:textColor="#ff333333" android:textColorHint="#ffcccccc" android:layout_gravity="center" android:id="@id/editlogin_psw" android:background="@null" android:focusable="true" android:focusableInTouchMode="true" android:nextFocusUp="@id/buttonConnect" android:nextFocusDown="@id/editPassword" android:layout_width="0.0dip" android:layout_height="44.0dip" android:hint="@string/passwrod" android:singleLine="true" android:layout_weight="1.0" android:inputType="textPassword" />
+                <ImageButton android:layout_gravity="center|right" android:id="@id/switch_eye" android:background="@android:color/transparent" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="0.0dip" android:src="@drawable/eye_close" android:contentDescription="@null" />
+            </LinearLayout>
+            <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/layout_password" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/keyCode_login" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="15.0dip">
+            <com.oray.sunlogin.weiget.EditTextView android:textSize="18.0sp" android:textColor="#ff292929" android:textColorHint="#ffcccccc" android:layout_gravity="center" android:id="@id/editKeyCode" android:background="@null" android:focusable="true" android:focusableInTouchMode="true" android:nextFocusUp="@id/buttonConnect" android:nextFocusDown="@id/editPassword" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginTop="15.0dip" android:hint="@string/keyCode" android:singleLine="true" android:inputType="number" />
+            <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/editKeyCode" />
+        </RelativeLayout>
+        <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/accountLogin" android:background="@drawable/button_ok_style" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="15.0dip" android:text="@string/login" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="#ff6a6a6a" android:gravity="center" android:id="@id/tv_forget_password" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="@string/forget_password" />
+            <TextView android:textSize="15.0sp" android:textColor="#ff6a6a6a" android:gravity="center" android:id="@id/tv_register" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="@string/ACCOUNT_REGISTER_CREATE" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView android:id="@id/list_history" android:visibility="invisible" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginTop="154.0dip" android:divider="@null" android:dividerHeight="0.0dip" />
+</FrameLayout>

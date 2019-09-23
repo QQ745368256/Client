@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose_speed" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/speed_first1" />
+    <View android:background="@drawable/line_view_background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose_balance" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/balance_first1" />
+    <View android:background="@drawable/line_view_background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose_quality" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/quality_first1" />
+</LinearLayout>

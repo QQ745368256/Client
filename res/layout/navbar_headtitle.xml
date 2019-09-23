@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/title_background_color" android:layout_width="fill_parent" android:layout_height="@dimen/g_titlebar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/g_headtitle_leftback_button" android:background="@android:color/transparent" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/title_back_selector" android:contentDescription="@null" />
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ff333333" android:ellipsize="marquee" android:gravity="center" android:id="@id/g_headtitle_title_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/g_titlebar_gap" android:layout_marginRight="@dimen/g_titlebar_gap" android:text="@string/account_register" android:singleLine="true" android:layout_centerInParent="true" />
+    <Button android:textSize="15.0sp" android:textColor="#ff6a6a6a" android:ellipsize="end" android:gravity="center|right" android:id="@id/g_headtitle_right_button" android:background="@null" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginRight="15.0dip" android:text="@string/keyCode_login" android:singleLine="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

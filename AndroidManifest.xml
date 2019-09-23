@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.oray.sunlogin.service" platformBuildVersionCode="18" platformBuildVersionName="3.10.18.22619"> //自动聚集权限 <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.sec.MDM_REMOTE_CONTROL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_REMOTE_CONTROL"/>
+    <uses-permission android:name="android.permission.sec.MDM_HW_CONTROL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_HW_CONTROL"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="getui.permission.GetuiService.com.oray.sunlogin.service"/>
+    <permission android:name="getui.permission.GetuiService.com.oray.sunlogin.service" android:protectionLevel="normal"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon_logo" android:label="@string/app_name" android:name="com.stub.StubApp" android:networkSecurityConfig="@xml/network_security_config" android:persistent="true" android:theme="@android:style/Theme.NoTitleBar" android:usesCleartextTraffic="true">
+        <meta-data android:name="UMENG_APPKEY" android:value="5ab4d5b18f4a9d63490000b9"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="c360"/>
+        <meta-data android:name="GS_APPID" android:value="AZ5O4PJWpwAApnEcKH7Kw3"/>
+        <meta-data android:name="GT_INSTALL_CHANNEL" android:value="c360"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.oray.sunlogin.application.Main" android:persistent="true" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.oray.sunlogin.receiver.ShutdownBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.oray.sunlogin.receiver.PowerConnectReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.oray.sunlogin.receiver.UserUnlockedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_UNLOCKED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.oray.sunlogin.receiver.UserPresentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.oray.sunlogin.receiver.AutoStartReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.samsung.knoxlicense.permissions" android:value="true"/>
+        <receiver android:name="com.oray.sunlogin.receiver.KnoxAdminReceiver" android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin" android:resource="@xml/device_admin_receiver"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.oray.sunlogin.receiver.KnoxLicenseReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.android.knox.intent.action.KNOX_LICENSE_STATUS"/>
+                <action android:name="com.samsung.android.knox.intent.action.LICENSE_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.samsung.android.knox.IntentConverterReceiver">
+            <intent-filter>
+                <action android:name="edm.intent.application.action.prevent.start"/>
+                <action android:name="edm.intent.application.action.prevent.stop"/>
+                <action android:name="edm.intent.action.ldap.createacct.result"/>
+                <action android:name="edm.intent.action.device.inside"/>
+                <action android:name="edm.intent.action.device.outside"/>
+                <action android:name="edm.intent.action.device.location.unavailable"/>
+                <action android:name="com.samsung.edm.intent.action.CERTIFICATE_REMOVED"/>
+                <action android:name="edm.intent.certificate.action.certificate.failure"/>
+                <action android:name="com.samsung.edm.intent.action.APPLICATION_FOCUS_CHANGE"/>
+                <action android:name="edm.intent.action.EMAIL_ACCOUNT_ADD_RESULT"/>
+                <action android:name="edm.intent.action.EMAIL_ACCOUNT_DELETE_RESULT"/>
+                <action android:name="com.sec.enterprise.intent.action.BLOCKED_DOMAIN"/>
+                <action android:name="com.sec.enterprise.intent.action.UPDATE_FOTA_VERSION_RESULT"/>
+                <action android:name="com.samsung.edm.intent.action.EXCHANGE_CBA_INSTALL_STATUS"/>
+                <action android:name="android.intent.action.sec.CBA_INSTALL_STATUS"/>
+                <action android:name="edm.intent.action.EXCHANGE_ACCOUNT_ADD_RESULT"/>
+                <action android:name="edm.intent.action.EXCHANGE_ACCOUNT_DELETE_RESULT"/>
+                <action android:name="com.samsung.edm.intent.action.ENFORCE_SMIME_ALIAS_RESULT"/>
+                <action android:name="edm.intent.action.knox_license.status"/>
+                <action android:name="edm.intent.action.license.status"/>
+                <action android:name="com.samsung.edm.intent.event.NTP_SERVER_UNREACHABLE"/>
+                <action android:name="edm.intent.action.enable.kiosk.mode.result"/>
+                <action android:name="edm.intent.action.disable.kiosk.mode.result"/>
+                <action android:name="edm.intent.action.unexpected.kiosk.behavior"/>
+                <action android:name="com.samsung.edm.intent.action.SIM_CARD_CHANGED"/>
+                <action android:name="android.intent.action.sec.SIM_CARD_CHANGED"/>
+                <action android:name="com.samsung.action.knox.certenroll.CEP_CERT_ENROLL_STATUS"/>
+                <action android:name="com.samsung.action.knox.certenroll.CEP_SERVICE_DISCONNECTED"/>
+                <action android:name="com.sec.enterprise.knox.intent.action.KNOX_ATTESTATION_RESULT"/>
+                <action android:name="com.sec.action.NO_USER_ACTIVITY"/>
+                <action android:name="com.sec.action.USER_ACTIVITY"/>
+                <action android:name="com.samsung.android.mdm.VPN_BIND_RESULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.oray.sunlogin.activity.TranslucentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.oray.sunlogin.activity.BatteryOptimizationActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.oray.sunlogin.service.installapk" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_path"/>
+        </provider>
+        <meta-data android:name="PUSH_APPID" android:value="6apUEdz1pD8MmM6dycWio3"/>
+        <meta-data android:name="PUSH_APPKEY" android:value="ZeAjU5Y8kp66D8jAgOPTu8"/>
+        <meta-data android:name="PUSH_APPSECRET" android:value="kGTDfc82uQ8MV2PztnN4z6"/>
+        <service android:exported="true" android:label="NotificationCenter" android:name="com.igexin.sdk.PushService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.igexin.sdk.PushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="com.igexin.sdk.action.refreshls"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.igexin.sdk.PushActivity" android:process=":pushservice" android:taskAffinity="com.igexin.sdk.PushActivityTask" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.igexin.sdk.GActivity" android:process=":pushservice" android:taskAffinity="com.igexin.sdk.PushActivityTask" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.oray.sunlogin.service.LocalSocketService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.oray.sunlogin.service.ScreenAndLockService"/>
+        <service android:exported="true" android:label="PushService" android:name="com.oray.sunlogin.service.OrayGTPushService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice"/>
+        <service android:name="com.oray.sunlogin.service.OrayGTIntentService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="true" android:name="com.oray.sunlogin.service.BackgroundMusicService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.oray.sunlogin.service.PuppetService"/>
+        <service android:exported="true" android:name="com.taobao.accs.ChannelService" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.ELECTION"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.taobao.accs.data.MsgDistributeService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.taobao.accs.EventReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.taobao.accs.ServiceReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.taobao.accs.internal.AccsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":channel"/>
+        <service android:name="com.taobao.accs.ChannelService$KernelService" android:process=":channel"/>
+        <service android:exported="true" android:name="org.android.agoo.accs.AgooService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.umeng.message.UmengIntentService" android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.umeng.message.XiaomiIntentService" android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.taobao.agoo.AgooCommondReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.oray.sunlogin.service.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.umeng.message.UmengMessageIntentReceiverService" android:process=":channel">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.umeng.message.NotificationProxyBroadcastReceiver"/>
+        <service android:exported="false" android:name="com.umeng.message.UmengMessageCallbackHandlerService">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.enablecallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.disablecallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.sendmessage.action"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.umeng.message.UmengDownloadResourceService"/>
+        <provider android:authorities="com.oray.sunlogin.service.umeng.message" android:exported="false" android:name="com.umeng.message.provider.MessageProvider">
+            <grant-uri-permission android:pathPattern=".*"/>
+        </provider>
+        <receiver android:exported="false" android:name="com.baidu.aiupdatesdk.receiver.BDBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.baidu.aiupdatesdk.ACTION_AS_DOWNLOAD_COMPLETE"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.yanzhenjie.permission.bridge.BridgeActivity" android:theme="@style/Permission.Theme"/>
+        <provider android:authorities="com.oray.sunlogin.service.file.path.share" android:exported="false" android:grantUriPermissions="true" android:name="com.yanzhenjie.permission.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/permission_file_paths"/>
+        </provider>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.1"/>
+        <service android:label="CoreService" android:name="com.getui.gtc.GtcService">
+            <intent-filter>
+                <action android:name="com.getui.gtc.sdk.service.action"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

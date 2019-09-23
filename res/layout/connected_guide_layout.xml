@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rl_noconnect_guide" android:background="@color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="30.0dip" android:layout_below="@id/header_ui"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout_tip" android:background="@color/title_background_color" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout_tip_notroot" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="@color/unlogin_btn_color" android:gravity="center" android:id="@id/tv_not_root" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/textcolor_shallow" android:gravity="center_horizontal" android:id="@id/tv_low_resolution" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/low_resolution_tip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/layout_tip_samsung" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="@color/textcolor_shallow" android:id="@id/tv_samsung_inactive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="79.0dip" android:text="@string/samsung_device_inactive" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/color_link_url" android:id="@id/tv_samsung_active_guide" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/samsung_device_active_guide" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="19.0sp" android:textColor="@drawable/g_button2_selector_text" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_right_pose" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/connect_device_tips" android:drawableRight="@drawable/arrow_down_selector" android:drawablePadding="10.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v4.view.ViewPager android:layout_gravity="center" android:id="@id/vp_guide" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_marginTop="20.0dip" android:layout_centerInParent="true" />
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_alignParentBottom="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/layout_pointers" android:layout_width="80.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="15.0dip" android:layout_below="@id/vp_guide" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

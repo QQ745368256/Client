@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/dialog_background" android:layout_width="300.0dip" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="18.0sp" android:textColor="#ff333333" android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/logout_confirm" android:singleLine="true" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="20.0dip">
+            <com.oray.sunlogin.weiget.EditTextView android:textSize="18.0sp" android:textColor="#ff333333" android:id="@id/edit_password" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:inputType="textPassword" />
+            <ImageButton android:layout_gravity="center|right" android:id="@id/switch_eye_display" android:background="@android:color/transparent" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="0.0dip" android:src="@drawable/eye_close" android:contentDescription="@null" />
+        </LinearLayout>
+        <View android:background="#ffe1e1e1" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffff0042" android:id="@id/tv_pwd_error" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="2.0dip" android:text="@string/passwrod_error" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip">
+            <Button android:textSize="15.0sp" android:textColor="@color/unlogin_btn_color" android:id="@id/btn_edit_cancel" android:background="@drawable/button_cancel_style" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/Cancel" android:layout_weight="1.0" />
+            <View android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" />
+            <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/btn_edit_ok" android:background="@drawable/button_ok_style" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/Confirm" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

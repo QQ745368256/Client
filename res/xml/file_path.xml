@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="download" path="com.oray.sunlogin.service/" />
+    <external-path name="external_storage_root" path="." />
+    <external-path name="extpath" path="appsearchcache/" />
+    <cache-path name="intcachs" path="appsearchcache/" />
+</paths>

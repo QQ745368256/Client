@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oray.sunlogin.weiget.SwipeMenuLayout android:orientation="horizontal" android:id="@id/item_view" android:background="@color/white" android:focusable="true" android:clickable="true" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/content_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/hostlist_listitem" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="16.0dip" android:textColor="@color/gray" android:gravity="center_vertical" android:id="@id/l_connect_ip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="\ 000000000000000" />
+            <TextView android:textSize="16.0dip" android:textColor="@color/DragMenu_text_color" android:id="@id/l_connect_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="5.0dip" android:text="\ 000000000000000" />
+        </LinearLayout>
+    </RelativeLayout>
+    <Button android:textColor="@android:color/white" android:gravity="center" android:id="@id/btnDisconnected" android:background="#fff93f25" android:layout_width="70.0dip" android:layout_height="fill_parent" android:text="@string/disconnect" />
+</com.oray.sunlogin.weiget.SwipeMenuLayout>

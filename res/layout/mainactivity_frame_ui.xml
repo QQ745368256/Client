@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout android:id="@id/drawer_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sp="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <RelativeLayout android:background="@drawable/view_main_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/layout_menu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+                <Button android:id="@id/menu_button" android:background="@drawable/menu_selector" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_margin="15.0dip" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_help" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/tv_help2" android:background="@null" android:padding="15.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/t_help2" />
+                    <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/tv_help" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/t_help" />
+                </LinearLayout>
+            </RelativeLayout>
+            <include android:id="@id/header_ui" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/layout_menu" android:layout_centerHorizontal="true" layout="@layout/mainactivity_header_ui" />
+            <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/btn_renew" android:background="@drawable/renew_selector" android:layout_width="100.0dip" android:layout_height="40.0dip" android:layout_marginTop="30.0dip" android:text="@string/renew" android:layout_below="@id/header_ui" android:layout_centerHorizontal="true" />
+            <LinearLayout android:gravity="center" android:id="@id/btn_connect_device_tips" android:background="@color/white" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+                <TextView android:textSize="15.0sp" android:textColor="@drawable/connect_device_tip_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/connect_device_tips" android:drawableRight="@drawable/arrow_up_selector" android:drawablePadding="10.0dip" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/layout_loading" android:background="@color/white" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+                <ImageView android:id="@id/img_loading" android:background="@drawable/progress_loading_anim" android:layout_width="25.0dip" android:layout_height="25.0dip" />
+                <TextView android:textSize="15.0sp" android:textColor="@color/DragMenu_text_color" android:id="@id/tv_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/CONNECT_SERVER" />
+            </LinearLayout>
+            <ListView android:id="@id/list" android:background="@color/white" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="30.0dip" android:cacheColorHint="#00000000" android:divider="@null" android:layout_below="@id/header_ui" />
+            <include layout="@layout/connected_guide_layout" />
+        </RelativeLayout>
+    </ScrollView>
+    <include layout="@layout/tab_menu_layout" />
+</android.support.v4.widget.DrawerLayout>

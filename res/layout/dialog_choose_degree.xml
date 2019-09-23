@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose0" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="0°" />
+    <View android:background="@drawable/line_view_background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose90" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="90°" />
+    <View android:background="@drawable/line_view_background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose180" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="180°" />
+    <View android:background="@drawable/line_view_background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/usual_text" android:id="@id/btn_choose270" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="270°" />
+</LinearLayout>

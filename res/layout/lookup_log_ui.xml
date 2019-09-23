@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/g_ui_bg1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/navbar_headtitle" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/DragMenu_text_color" android:gravity="top" android:id="@id/logText" android:background="@drawable/g_ui_bg1" android:padding="@dimen/g_titlebar_gap" android:layout_width="fill_parent" android:layout_height="0.0dip" />
+        </ScrollView>
+        <LinearLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="80.0dip">
+            <Button android:textSize="@dimen/g_text_size" android:textColor="@color/DragMenu_text_color" android:layout_gravity="center_vertical" android:id="@id/copyLogButton" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/copy" android:drawableTop="@drawable/copy" android:drawablePadding="10.0dip" android:layout_weight="1.0" />
+            <Button android:background="@drawable/dashed" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:textSize="@dimen/g_text_size" android:textColor="@color/DragMenu_text_color" android:layout_gravity="center_vertical" android:id="@id/sendEmailButton" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sendEmail" android:drawableTop="@drawable/mail" android:drawablePadding="10.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
